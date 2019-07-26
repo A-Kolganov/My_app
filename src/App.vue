@@ -1,23 +1,30 @@
 <template>
-<div class="wrapper">
-  <header class="header-app">
-  </header>
-  <div>
-    <app-hello></app-hello>
-  </div>
-  <div>
-    <app-nav></app-nav>
-  </div>
-  <div>
-    <router-view class="page__content"></router-view>
-  </div>
-  <div class="page__bottom-effect">
+ <!-- <div class="wrapper">
+   <header class="header-app">
+   </header>
+   <div>
+     <app-hello></app-hello>
+   </div>
+   <div>
+     <app-nav></app-nav>
+   </div>
+   <div>
+     <router-view class="page__content"></router-view>
+   </div>
+   <div class="page__bottom-effect">
 
-  </div>
-  <app-foot></app-foot>
+   </div>
+   <app-foot></app-foot>
 
-</div>
-</template>
+ </div> -->
+  <div class="wrapper">
+    <div class="content-wrapper">
+    <app-header>
+    </app-header>  
+
+    </div>
+  </div>
+ </template>
 
 <script>
 
@@ -27,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.wrapper{
+/**.wrapper{
   min-width: 1000px;
 }
 .header-app,.footer-app{
@@ -53,5 +60,5 @@ export default {
   border-bottom: 10px solid #cc00cc;
   background-color: #fff;
   border-radius: 50px;
-}
+}**/
 </style>

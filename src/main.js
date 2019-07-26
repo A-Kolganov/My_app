@@ -3,18 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import appHello from './view/HelloWorld.vue'
-import navigation from '@/components/Navigation'
-import footer from './view/Footer.vue'
+// import appHello from './view/HelloWorld.vue'
+// import navigation from '@/components/Navigation'
+// import footer from './view/Footer.vue'
+import header from './view/header.vue'
 
 Vue.config.productionTip = false
 
-Vue.component('app-foot', footer)
-Vue.component('app-hello', appHello)
-// Vue.component('app-home', home)
-Vue.component('app-nav', navigation)
+Vue.components('app-header', header)
+// Vue.component('app-foot', footer)
+// Vue.component('app-hello', appHello)
+// // Vue.component('app-home', home)
+// Vue.component('app-nav', navigation)
 // Vue.component('app-about', About)
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
