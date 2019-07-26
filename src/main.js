@@ -6,11 +6,15 @@ import router from './router'
 // import appHello from './view/HelloWorld.vue'
 // import navigation from '@/components/Navigation'
 // import footer from './view/Footer.vue'
-import header from './view/header.vue'
+import headerApp from './view/header.vue'
+import options from './components/Options.vue'
+import optionsMenu from './components/Options-menu.vue'
 
 Vue.config.productionTip = false
 
-Vue.components('app-header', header)
+Vue.component('app-header', headerApp)
+Vue.component('app-options', options)
+Vue.component('app-options-menu', optionsMenu)
 // Vue.component('app-foot', footer)
 // Vue.component('app-hello', appHello)
 // // Vue.component('app-home', home)

@@ -1,6 +1,8 @@
 <template>
     <header class="header">
-        
+        <app-options>
+      
+      </app-options>
     </header>
         
     
