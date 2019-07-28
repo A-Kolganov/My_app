@@ -35,6 +35,7 @@ export default {
 </script>
 
 <style scoped>
+@import './assets/fonts/index.css';
 /**.wrapper{
   min-width: 1000px;
 }

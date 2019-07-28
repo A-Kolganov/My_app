@@ -10,6 +10,7 @@ import headerApp from './view/header.vue'
 import options from './components/Options.vue'
 import optionsMenu from './components/Options-menu.vue'
 
+
 Vue.config.productionTip = false
 
 Vue.component('app-header', headerApp)

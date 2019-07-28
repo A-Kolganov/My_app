@@ -125,6 +125,10 @@ border: 3px solid #fff;
     .options-btn-box__btn__title--open{
         color: #000;
     }
+    .options-box{
+        position:relative;
+        width: 100%;
+    }
     @media(min-width:1024px){
         .options-btn-box__btn,.options-btn-box__btn--open{
             width: 250px;
