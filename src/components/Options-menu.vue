@@ -3,15 +3,15 @@
      <form  class="options-box__form">
          <section class="section section--theme">
              <h2 class="section__title">{{lang === 'ru' ? titleTheme.ru : titleTheme.eng}}</h2>
-             <label for="colorTheme">{{lang === 'ru'? titleTheme.hexTitle.ru : titleTheme.hexTitle.eng}}</label>
-             <input v-on:keypress.enter.prevent v-model.prevent="themeColor" type="text" id="colorTheme" name="themeColor" value="#f0f050">
+             <label class="section__inpLabel" for="colorTheme">{{lang === 'ru'? titleTheme.hexTitle.ru : titleTheme.hexTitle.eng}}</label>
+             <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model.prevent="themeColor" type="text" id="colorTheme" name="themeColor" value="#f0f050">
          </section>
          <section class="section section--lang">
              <h2 class="section__title">{{lang === 'ru' ? titleLang.ru : titleLang.eng}}</h2>
-             <input v-model="choosedLang" type="radio" id="langRu" name="language" value="ru">
-             <label for="langRu">{{lang === 'ru'? titleLang.radioBtn.ruRu : titleLang.radioBtn.engRu}}</label>
+             <input v-model="choosedLang" type="radio" id="langRu" name="language" value="ru" checked="checked">
+             <label class="section__inpLabel" for="langRu">{{lang === 'ru'? titleLang.radioBtn.ruRu : titleLang.radioBtn.engRu}}</label>
              <input v-model="choosedLang" type="radio" id="langEng" name="language" value="eng">
-             <label for="langEng">{{lang === 'ru'? titleLang.radioBtn.ruEng : titleLang.radioBtn.engEng}}</label>
+             <label class="section__inpLabel" for="langEng">{{lang === 'ru'? titleLang.radioBtn.ruEng : titleLang.radioBtn.engEng}}</label>
          </section>
          <section class="section section--audio">
              <h2 class="section__title">{{lang === 'ru' ? titleMusic.ru : titleMusic.eng}}</h2>
@@ -93,6 +93,24 @@ export default {
   font-family: "Alice";
   font-size: 25px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+}
+.section__inpLabel{
+  font-family: "Rubik";
+  font-size: 15px;
+  text-align: left;
+  padding: 3px;
+  margin: 5px;
+}
+.section__inpLabel__input-color{
+    margin: 10px 0;
+    padding: 7px;
+    font-family: "Rubik";
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: block;
+    outline: none;
 }
 </style>
