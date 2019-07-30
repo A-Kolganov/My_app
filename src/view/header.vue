@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <app-options>
+        <app-options @lang="changeLang">
       
       </app-options>
     </header>
@@ -8,7 +8,22 @@
     
 </template>
 <script>
+import optMenu from './../components/Options-menu';
     export default {
+        data () {
+            return {
+                lang: 'ru',
+    }
+  },
+    methods: {
+        changeLang: function(data){
+            this.lang = data;
+            this.$emit('lang', this.lang);
+        }
+    },
+    components: {
+        optMenu
+        }
 }
 </script>
 <style scope>

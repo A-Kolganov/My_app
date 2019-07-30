@@ -56,10 +56,17 @@ export default {
   },
   watch:{
     choosedLang: function(val){
+    
       if(this.choosedLang === 'ru'){
-        return this.lang = 'ru';
+        this.lang = 'ru';
+        this.$emit('lang', this.lang);
+       
+        return
       } else {
-        return this.lang = 'eng';
+         this.lang = 'eng';
+        this.$emit('lang', this.lang);
+       
+        return
       }
     },
   }

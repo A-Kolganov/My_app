@@ -19,7 +19,7 @@
  </div> -->
   <div class="wrapper">
     <div class="content-wrapper">
-    <app-header>
+    <app-header @lang="changeLang">
 
     </app-header>  
 
@@ -28,8 +28,21 @@
  </template>
 
 <script>
-
+import optMenu from './components/Options-menu';
 export default {
+  data() {
+    return {
+      lang: 'ru',
+    }
+  },
+    methods: {
+        changeLang: function(data){
+            this.lang = data;
+        }
+    },
+    components:{
+      optMenu
+    }
 }
 
 </script>

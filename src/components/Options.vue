@@ -10,29 +10,41 @@
         <div v-else class="options-btn-box__btn--open">
             <span v-if='!optionsBtn' class="options-btn-box__btn__line"></span>
             <span v-else class="options-btn-box__btn__line--open"></span>   
-            <span class="options-btn-box__btn__title--open" v-if="lang ==='ru'"> Настройки</span>
-            <span class="options-btn-box__btn__title--open" v-else> Options</span> 
+            <span class="options-btn-box__btn__title--open" > {{lang === 'ru' ? btnTitle.ru : btnTitle.eng}}</span>
+            
         </div>
     </div>
     <div class="options-box">
-        <app-options-menu>
+        <app-options-menu v-show="optionsBtn" @lang="changeLang">
         </app-options-menu>
     </div>
     </div>
 </template>
-<script>
+<script>  
+import optMenu from './Options-menu';
     export default {
         data () {
             return {
                 lang: 'ru',
                 optionsBtn: false,
+                btnTitle: {
+                    ru: 'Настройки',
+                    eng: 'Options',
+                }
     }
   },
   methods: {
         openOptionsMenu: function(e){
             return this.optionsBtn = !this.optionsBtn;
+        },
+        changeLang: function(data){
+            this.lang = data;
+            this.$emit('lang', this.lang);
         }
     },
+    components: {
+        optMenu
+        }
 }
 </script>
 <style scope>
@@ -115,9 +127,12 @@ border: 3px solid #fff;
     .options-btn-box__btn__title,.options-btn-box__btn__title--open{
         
         display: none;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: bold;
         margin: 0 8px;
+        position: relative;
+        top: -3px;
+        font-family: "Rubik";
     }
     .options-btn-box__btn__title{
         color: #fff;
