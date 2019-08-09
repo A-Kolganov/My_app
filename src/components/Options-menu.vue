@@ -32,15 +32,15 @@ export default {
       titleTheme: {
         ru: 'Сменить цвет темы:',
         eng: 'Change theme color:',
-        hexTitle:{
-          ru:'Введите HEX код цвета',
-          eng:'Enter a hex color code'
+        hexTitle: {
+          ru: 'Введите HEX код цвета',
+          eng: 'Enter a hex color code'
         }
       },
       titleLang: {
         ru: 'Выберите язык:',
         eng: 'Choose language:',
-        radioBtn:{
+        radioBtn: {
           ruRu: 'Русский',
           ruEng: 'Английский',
           engRu: 'Russian',
@@ -50,27 +50,21 @@ export default {
       titleMusic: {
         ru: 'Аудио плеер',
         eng: 'Audio player'
-      } 
+      }
 
     }
   },
-  watch:{
-    choosedLang: function(val){
-    
-      if(this.choosedLang === 'ru'){
-        this.lang = 'ru';
-        this.$emit('lang', this.lang);
-       
-        return
+  watch: {
+    choosedLang: function (val) {
+      if (this.choosedLang === 'ru') {
+        this.lang = 'ru'
+        this.$emit('lang', this.lang)
       } else {
-         this.lang = 'eng';
-        this.$emit('lang', this.lang);
-       
-        return
+        this.lang = 'eng'
+        this.$emit('lang', this.lang)
       }
     },
-    themeColor: function(val){
-
+    themeColor: function (val) {
       this.$emit('theme', this.themeColor)
     }
   }

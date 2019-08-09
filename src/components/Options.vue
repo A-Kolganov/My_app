@@ -1,17 +1,17 @@
 <template>
     <div class="wrapper">
             <div v-on:click="openOptionsMenu" class="options-btn-box">
-        <div v-if='!optionsBtn' class="options-btn-box__btn"> 
+        <div v-if='!optionsBtn' class="options-btn-box__btn">
             <span v-if='!optionsBtn' class="options-btn-box__btn__line"></span>
-            <span v-else class="options-btn-box__btn__line--open"></span>   
+            <span v-else class="options-btn-box__btn__line--open"></span>
             <span class="options-btn-box__btn__title" v-if="lang ==='ru'"> Настройки</span>
-                <span class="options-btn-box__btn__title" v-else> Options</span> 
+                <span class="options-btn-box__btn__title" v-else> Options</span>
         </div>
         <div v-else class="options-btn-box__btn--open">
             <span v-if='!optionsBtn' class="options-btn-box__btn__line"></span>
-            <span v-else class="options-btn-box__btn__line--open"></span>   
+            <span v-else class="options-btn-box__btn__line--open"></span>
             <span class="options-btn-box__btn__title--open" > {{lang === 'ru' ? btnTitle.ru : btnTitle.eng}}</span>
-            
+
         </div>
     </div>
     <div class="options-box">
@@ -20,36 +20,36 @@
     </div>
     </div>
 </template>
-<script>  
-import optMenu from './Options-menu';
-    export default {
-        data () {
-            return {
-                lang: 'ru',
-                optionsBtn: false,
-                themeColor: '#cc00cc',
-                btnTitle: {
-                    ru: 'Настройки',
-                    eng: 'Options',
-                }
+<script>
+import optMenu from './Options-menu'
+export default {
+  data () {
+    return {
+      lang: 'ru',
+      optionsBtn: false,
+      themeColor: '#cc00cc',
+      btnTitle: {
+        ru: 'Настройки',
+        eng: 'Options'
+      }
     }
   },
   methods: {
-        openOptionsMenu: function(e){
-            return this.optionsBtn = !this.optionsBtn;
-        },
-        changeLang: function(data){
-            this.lang = data;
-            this.$emit('lang', this.lang);
-        },
-        chooseTheme: function(v){
-            this.themeColor = v;
-            this.$emit('theme', this.themeColor);
-        }
+    openOptionsMenu: function (e) {
+      return this.optionsBtn = !this.optionsBtn
     },
-    components: {
-        optMenu
-        }
+    changeLang: function (data) {
+      this.lang = data
+      this.$emit('lang', this.lang)
+    },
+    chooseTheme: function (v) {
+      this.themeColor = v
+      this.$emit('theme', this.themeColor)
+    }
+  },
+  components: {
+    optMenu
+  }
 }
 </script>
 <style scope>
@@ -99,7 +99,7 @@ border: 3px solid #fff;
         content: "";
         display:block;
         height: 3px;
-        
+
         position:relative;
     }
     .options-btn-box__btn__line::before,.options-btn-box__btn__line::after{
@@ -128,9 +128,9 @@ border: 3px solid #fff;
         left: -10px;
         top: 4px;
     }
-    
+
     .options-btn-box__btn__title,.options-btn-box__btn__title--open{
-        
+
         display: none;
         font-size: 20px;
         font-weight: bold;

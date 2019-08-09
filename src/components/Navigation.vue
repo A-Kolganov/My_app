@@ -27,14 +27,13 @@
 <script>
 
 export default {
-  props:['themeColor','lang'],
+  props: ['themeColor', 'lang'],
   data () {
     return {
 
-      
     }
   },
-  methods:{
+  methods: {
 
   },
   computed: {
