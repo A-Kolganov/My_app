@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="options-box">
-        <app-options-menu v-show="optionsBtn" @lang="changeLang">
+        <app-options-menu v-show="optionsBtn" @lang="changeLang" @theme="chooseTheme">
         </app-options-menu>
     </div>
     </div>
@@ -27,6 +27,7 @@ import optMenu from './Options-menu';
             return {
                 lang: 'ru',
                 optionsBtn: false,
+                themeColor: '#cc00cc',
                 btnTitle: {
                     ru: 'Настройки',
                     eng: 'Options',
@@ -40,6 +41,10 @@ import optMenu from './Options-menu';
         changeLang: function(data){
             this.lang = data;
             this.$emit('lang', this.lang);
+        },
+        chooseTheme: function(v){
+            this.themeColor = v;
+            this.$emit('theme', this.themeColor);
         }
     },
     components: {
@@ -143,6 +148,9 @@ border: 3px solid #fff;
     .options-box{
         position:relative;
         width: 100%;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: linear;
     }
     @media(min-width:1024px){
         .options-btn-box__btn,.options-btn-box__btn--open{

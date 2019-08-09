@@ -18,12 +18,14 @@
 
  </div> -->
   <div class="wrapper">
-    <div class="content-wrapper">
-    <app-header @lang="changeLang">
-
-    </app-header>  
-
+    <div :style="{'background': 'linear-gradient(72deg, #000000 0%, #2c2c2c 20%,'+themeColor+' 22%,'+themeColor+' 23%, #2b2b2b 30%, #2c2c2c 58% ,'+themeColor+ ' 60%,'+themeColor+' 61% , #2c2c2c 65%, #000000 100%)'}" class="content-wrapper">
+      <app-header @lang="changeLang" @theme="chooseTheme">
+      </app-header>  
+      <app-main v-bind:themeColor="themeColor" v-bind:lang="lang">
+      </app-main>
+      
     </div>
+
   </div>
  </template>
 
@@ -33,11 +35,15 @@ export default {
   data() {
     return {
       lang: 'ru',
+      themeColor: '#cc00cc',
     }
   },
     methods: {
         changeLang: function(data){
             this.lang = data;
+        },
+        chooseTheme: function(v){
+            this.themeColor = v;
         }
     },
     components:{
@@ -49,6 +55,14 @@ export default {
 
 <style scoped>
 @import './assets/fonts/index.css';
+.content-wrapper{
+ 
+  height:auto;
+  min-height: 100vh;
+  width:100%;
+
+}
+
 /**.wrapper{
   min-width: 1000px;
 }

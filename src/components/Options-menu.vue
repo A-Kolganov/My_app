@@ -69,6 +69,10 @@ export default {
         return
       }
     },
+    themeColor: function(val){
+
+      this.$emit('theme', this.themeColor)
+    }
   }
 }
 </script>
@@ -76,6 +80,7 @@ export default {
 <style scoped>
 .options-box{
   position:absolute;
+  background-color:#fff;
   width:300px;
   height: auto;
   top: 10px;
@@ -85,6 +90,7 @@ export default {
   border-radius:25px;
   box-sizing:border-box;
   padding:10px;
+      z-index: 25;
 }
 .options-box__form{
 
