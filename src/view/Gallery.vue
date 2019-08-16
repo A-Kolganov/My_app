@@ -1,18 +1,16 @@
 <template>
   <div>
-      <h2 class="content__title">{{title}}</h2>
+      <h2 class="content__title">{{lang === 'ru' ? title.ru : title.eng}}</h2>
       <p class="content__text">ниже приведена таблица моих работ или проектов, где я принимал участие</p>
       <table class="content__text">
         <tr>
-          <th>Дата</th>
-          <th>Вид</th>
-          <th>Ссылка</th>
-          <th>Цель</th>
-          <th>Основа</th>
+          <th :style="{'background-color': themeColor}">Вид</th>
+          <th :style="{'background-color': themeColor}">Ссылка</th>
+          <th :style="{'background-color': themeColor}">Цель</th>
+          <th :style="{'background-color': themeColor}">Основа</th>
         </tr>
         <tr v-bind:key="index" v-for=" (item, index) of galleryWork">
-          <td>{{item.date}}</td>
-          <td><img :src="item.img" alt="img"></td>
+          <td><img :src="setImg(item.link, index)" :id="setID(index)" alt="image"></td>
           <td><a :href="item.link" target="_blank">{{item.link}}</a></td>
           <td>{{item.point}}</td>
           <td>
@@ -22,6 +20,7 @@
           </td>
         </tr>
       </table>
+      <a href="./static/img/foto.jpg" download>download</a>
   </div>
 
 </template>
@@ -30,27 +29,59 @@
 import textMix from './../mixins/textMixin'
 
 export default {
+  props: ['lang', 'themeColor'],
   data () {
     return {
-      title: `Мои работы !`,
+      title: {
+        ru: 'Мои работы',
+        eng: 'My projects'
+      },
+      arrImg: [],
       galleryWork: [
         {
-          date: '15.02.2018',
           img: './static/img/foto.jpg',
-          link: 'google.com',
+          link: 'https://www.google.com',
           point: 'сайт для растений',
           tech: ['HTML', 'SASS', 'JS']
         },
         {
-          date: '20.07.2019',
           img: './static/img/foto.jpg',
-          link: 'google.com',
+          link: 'https://www.pixlr.com/',
           point: 'курсовой проект',
           tech: ['HTML', 'SASS', 'JS', 'Vue.js']
         }
       ]
     }
   },
+  methods: {
+    setID (ind) {
+      return 'imgID' + ind
+    },
+    setImg: function (url, ind) {
+      console.log(`arrImg: ` + this.arrImg)
+      console.log(`arrImg.length: ` + this.arrImg.length)
+      if (this.arrImg.length > 0) {
+        const imgPlace = document.querySelector('#imgID' + ind)
+        imgPlace.setAttribute('src', this.arrImg[ind])
+        console.log(`arrImg[ind] ` + this.arrImg[ind])
+      } else {
+        this.fetchAPI(url, ind)
+      }
+    },
+    fetchAPI (link, ind) {
+      const keyAPI = '5c8a795154b726205b11554ae09686d1186cd15744a02'
+
+      fetch(`https://api.linkpreview.net/?key=${keyAPI}&q=${link}`)
+        .then(response => {
+          if (response.ok) return response.json()
+          throw new Error(`Error while fetching: ${response.statusText}`)
+        })
+        .then(data => {
+          const imgPlace = document.querySelector('#imgID' + ind)
+          this.arrImg.push(data.image)
+          imgPlace.setAttribute('src', data.image)
+        }).catch(err => console.log(err))
+    }},
   mixins: [textMix]
 }
 </script>
@@ -62,37 +93,70 @@ table{
     border-collapse: separate;
     border-spacing: 5px;
     text-align:center;
+    font-size: 15px;
+    table-layout: fixed;
+    padding: 0;
 }
-tr{
-
+.content__text{
+  text-indent: 0;
+  font-size: 10px;
 }
 th {
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 13px;
   text-indent: 0;
   font-style: normal;
   text-align: center;
   line-height: 40px;
   padding: 15px 0;
-  background-color: #bbb;
+  background-color: #cc00cc;
   border-radius:15px;
-
+  background: rgba(255,255,255,0.5);
 }
 td>img{
-  width: 100px;
+  width: 50px;
   border-radius: 15px;
   margin: 0 auto;
   display: block;
 }
 td{
-  padding: 15px 0;
+  padding: 10px 5px;
   vertical-align: middle;
-  text-align: left;
+  text-align: center;
+  word-break: break-word;
+    border-radius:15px;
+}
+tr:nth-child(odd){
+  background: linear-gradient(280deg, #ccc, #eee);
+
+}
+tr:nth-child(even){
+  background: linear-gradient(90deg, #ccc, #eee);
 }
 ul {
   list-style: inside;
 }
 li{
   text-align:left;
+}
+@media(min-width: 768px){
+td>img{
+  width: 150px;
+
+}
+th {
+
+  font-size: 20px;
+
+}
+}
+@media(min-width:1024px){
+  td>img{
+  width: 200px;
+
+}
+.content__text{
+  font-size: 15px;
+}
 }
 </style>

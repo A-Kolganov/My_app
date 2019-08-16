@@ -11,7 +11,6 @@ import options from './components/Options.vue'
 import optionsMenu from './components/Options-menu.vue'
 import main from './view/main.vue'
 
-
 Vue.config.productionTip = false
 
 Vue.component('app-header', headerApp)
@@ -24,6 +23,26 @@ Vue.component('app-main', main)
 Vue.component('app-nav', navigation)
 // Vue.component('app-about', About)
 /* eslint-disable no-new */
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: 'AIzaSyAzbNJs8urRteJ10lmdsxcnlgeXlKaC5ns',
+  authDomain: 't-crow.firebaseapp.com',
+  databaseURL: 'https://t-crow.firebaseio.com',
+  projectId: 't-crow',
+  storageBucket: 't-crow.appspot.com',
+  messagingSenderId: '570448598559',
+  appId: '1:570448598559:web:b10087a077e14842'
+}
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+
+const db = firebase.firestore()
+
+db.collection('admin').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    console.log(doc.data())
+  })
+})
 
 new Vue({
   el: '#app',

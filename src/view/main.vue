@@ -2,22 +2,22 @@
     <main class="main-content" :style="{'border-top': '10px'+' '+ themeColor + ' '+ 'solid','border-bottom': '10px'+' '+ themeColor + ' '+ 'solid'}
     ">
         <div class="main-content__img-wrapper" :style="{'border': '5px'+' '+ themeColor + ' '+ 'solid','background-color': themeColor}">
-        
+
         <img src="../assets/img/foto.jpg" class="main-content__img-wrapper__img" alt="That's me!">
 
         </div>
         <app-nav :themeColor="themeColor" :lang="lang"></app-nav>
-    </main>    
+    </main>
 </template>
 
 <script>
 export default {
-    props:['themeColor','lang'],
-  data() {
+  props: ['themeColor', 'lang'],
+  data () {
     return {
 
     }
-  },
+  }
 }
 
 </script>

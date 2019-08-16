@@ -20,7 +20,7 @@
           </li>
         </ul>
       </nav>
-      <router-view class="view"></router-view>
+      <router-view class="view" v-bind:themeColor="themeColor" v-bind:lang="lang"></router-view>
 </div>
 
 </template>

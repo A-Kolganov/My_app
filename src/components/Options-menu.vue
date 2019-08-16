@@ -4,7 +4,7 @@
          <section class="section section--theme">
              <h2 class="section__title">{{lang === 'ru' ? titleTheme.ru : titleTheme.eng}}</h2>
              <label class="section__inpLabel" for="colorTheme">{{lang === 'ru'? titleTheme.hexTitle.ru : titleTheme.hexTitle.eng}}</label>
-             <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model.prevent="themeColor" type="text" id="colorTheme" name="themeColor" value="#f0f050">
+             <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model="themeColor" type="text" id="colorTheme" name="themeColor" value="#f0f050">
          </section>
          <section class="section section--lang">
              <h2 class="section__title">{{lang === 'ru' ? titleLang.ru : titleLang.eng}}</h2>

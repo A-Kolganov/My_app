@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     openOptionsMenu: function (e) {
-      return this.optionsBtn = !this.optionsBtn
+      this.optionsBtn = !this.optionsBtn
     },
     changeLang: function (data) {
       this.lang = data

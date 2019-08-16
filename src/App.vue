@@ -56,7 +56,7 @@ export default {
 <style scoped>
 @import './assets/fonts/index.css';
 .content-wrapper{
-
+  background-attachment: fixed ;
   height:auto;
   min-height: 100vh;
   width:100%;
