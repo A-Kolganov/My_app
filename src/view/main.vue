@@ -29,7 +29,7 @@ export default {
     position: relative;
     border-radius: 50px;
     width:100%;
-    margin:200px auto;
+    margin:200px auto 0;
     height: auto;
     background-color:#fff;
                 transition-property: all;

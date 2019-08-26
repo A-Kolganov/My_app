@@ -1,12 +1,9 @@
 <template>
     <header class="header">
         <app-options @lang="changeLang" @theme="chooseTheme">
-      
       </app-options>
       <h1 class="header__title">hello world!</h1>
     </header>
-        
-    
 </template>
 <script>
 import optMenu from './../components/Options-menu';

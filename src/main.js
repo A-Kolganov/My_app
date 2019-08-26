@@ -40,7 +40,7 @@ const db = firebase.firestore()
 
 db.collection('admin').get().then((snapshot) => {
   snapshot.docs.forEach(doc => {
-    console.log(doc.data())
+    console.log(doc)
   })
 })
 

@@ -10,7 +10,7 @@
           <th :style="{'background-color': themeColor}">Основа</th>
         </tr>
         <tr v-bind:key="index" v-for=" (item, index) of galleryWork">
-          <td><img :src="setImg(item.link, index)" :id="setID(index)" alt="image"></td>
+          <td><img :src="item.img" alt="image"></td>
           <td><a :href="item.link" target="_blank">{{item.link}}</a></td>
           <td>{{item.point}}</td>
           <td>
@@ -20,7 +20,6 @@
           </td>
         </tr>
       </table>
-      <a href="./static/img/foto.jpg" download>download</a>
   </div>
 
 </template>
@@ -40,7 +39,7 @@ export default {
       galleryWork: [
         {
           img: './static/img/foto.jpg',
-          link: 'https://www.google.com',
+          link: 'https://a-kolganov.github.io/lesnaya_opushka/build/index.html',
           point: 'сайт для растений',
           tech: ['HTML', 'SASS', 'JS']
         },
@@ -54,34 +53,7 @@ export default {
     }
   },
   methods: {
-    setID (ind) {
-      return 'imgID' + ind
     },
-    setImg: function (url, ind) {
-      console.log(`arrImg: ` + this.arrImg)
-      console.log(`arrImg.length: ` + this.arrImg.length)
-      if (this.arrImg.length > 0) {
-        const imgPlace = document.querySelector('#imgID' + ind)
-        imgPlace.setAttribute('src', this.arrImg[ind])
-        console.log(`arrImg[ind] ` + this.arrImg[ind])
-      } else {
-        this.fetchAPI(url, ind)
-      }
-    },
-    fetchAPI (link, ind) {
-      const keyAPI = '5c8a795154b726205b11554ae09686d1186cd15744a02'
-
-      fetch(`https://api.linkpreview.net/?key=${keyAPI}&q=${link}`)
-        .then(response => {
-          if (response.ok) return response.json()
-          throw new Error(`Error while fetching: ${response.statusText}`)
-        })
-        .then(data => {
-          const imgPlace = document.querySelector('#imgID' + ind)
-          this.arrImg.push(data.image)
-          imgPlace.setAttribute('src', data.image)
-        }).catch(err => console.log(err))
-    }},
   mixins: [textMix]
 }
 </script>

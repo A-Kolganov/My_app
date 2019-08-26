@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2 class="content__title">{{title}}</h2>
+      <h2 class="content__title">{{lang === 'ru' ? title.ru : title.eng}}</h2>
 
   </div>
 
@@ -9,9 +9,13 @@
 <script>
 import textMix from './../mixins/textMixin'
 export default {
+  props: ['lang', 'themeColor'],
   data () {
     return {
-      title: `Мои контакты !`
+      title: {
+        ru: 'Мои контакты',
+        eng: 'My contacts'
+      }
     }
   },
   mixins: [textMix]

@@ -24,11 +24,14 @@ export default {
         eng: 'Nice to meet you !'
       },
       articles: [{
-        url: './static/img/html.png', alt: 'html & css & js image', message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nisi ullam, voluptatem laboriosam ipsum dolorem laudantium voluptates corrupti illo cum.'},
+        url: './static/img/html.png', alt: 'html & css & js image', 
+        message: 'Рад приветствовать Вас на моём личном сайте! Здесь Вы сможете найти немного информации обо мне и о том что я делаю - мои идеи и мои работы.'},
       {
-        url: './static/img/code-javascript.jpg', alt: 'js image', message: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure enim unde tenetur iste minima animi maiores vero quasi eligendi explicabo. Saepe minima laborum ut, ipsa cumque ab incidunt eius cum. Ut consequuntur deleniti incidunt. Praesentium?`},
+        url: './static/img/code-javascript.jpg', alt: 'js image', 
+        message: `Для удобства вверху сайта предоставленно небольшое меню. Нажимайте на кнопку и в отдельном окне Вы можете настроить цвет темы для своего комфорта, выбрать язык и включить музыку для более комфорта прибывания на сайте. Ниже есть навигация по сайту, выбирайте интересующую Вас вкладку для более конкретной информации. Так же, Вы можете отпрвить свой комментарий на вкладке " Контакты" . Буду рад прочесть Ваше мнение, идеи или получить критику. `},
       {
-        url: './static/img/15.79.jpg', alt: 'working guy', message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus officia illo molestiae laudantium tempore, nemo esse distinctio explicabo, nihil ipsam eligendi reiciendis libero. Unde nisi voluptates ex illo distinctio, quos libero dolore ullam. Magni porro ea, expedita autem, maxime culpa accusamus, minima a amet perferendis minus dolorum commodi asperiores et.`}
+        url: './static/img/15.79.jpg', alt: 'working guy', 
+        message: `Не теряй времени - переходи по ссылкам  `}
       ]
     }
   },
