@@ -1,14 +1,19 @@
 <template>
   <div :style="{'border': '5px'+' '+ themeColor + ' '+ 'solid'}" class="options-box">
-     <form  class="options-box__form">
+     <form  class="options-box__form" >
          <section class="section section--theme">
              <h2 class="section__title">{{lang === 'ru' ? titleTheme.ru : titleTheme.eng}}</h2>
              <label class="section__inpLabel" for="colorTheme">{{lang === 'ru'? titleTheme.hexTitle.ru : titleTheme.hexTitle.eng}}</label>
-             <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model="themeColor" type="text" id="colorTheme" name="themeColor" value="#f0f050">
+             <div class="input-cover">
+             <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model="themeColor" type="text" id="colorTheme" name="themeColor">
+             <div class="input-example" :style="{'background-color': themeColor }">
+               
+             </div>
+         </div>
          </section>
          <section class="section section--lang">
              <h2 class="section__title">{{lang === 'ru' ? titleLang.ru : titleLang.eng}}</h2>
-             <input v-model="choosedLang" type="radio" id="langRu" name="language" value="ru" checked="checked">
+             <input v-model="choosedLang" type="radio" id="langRu" name="language" value="ru" checked>
              <label class="section__inpLabel" for="langRu">{{lang === 'ru'? titleLang.radioBtn.ruRu : titleLang.radioBtn.engRu}}</label>
              <input v-model="choosedLang" type="radio" id="langEng" name="language" value="eng">
              <label class="section__inpLabel" for="langEng">{{lang === 'ru'? titleLang.radioBtn.ruEng : titleLang.radioBtn.engEng}}</label>
@@ -27,7 +32,7 @@ export default {
   data () {
     return {
       lang: 'ru',
-      choosedLang: '',
+      choosedLang: 'ru',
       themeColor: '#cc00cc',
       titleTheme: {
         ru: 'Сменить цвет темы:',
@@ -114,10 +119,21 @@ export default {
     padding: 7px;
     font-family: "Rubik";
     font-size: 15px;
-    width: 100%;
     box-sizing: border-box;
     border-radius: 15px;
     display: block;
     outline: none;
+}
+.input-cover{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-example{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #000;
 }
 </style>

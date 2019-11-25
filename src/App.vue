@@ -23,9 +23,9 @@
       </app-header>
       <app-main v-bind:themeColor="themeColor" v-bind:lang="lang">
       </app-main>
-
+      <app-foot v-bind:themeColor="themeColor" v-bind:lang="lang">
+      </app-foot>
     </div>
-
   </div>
  </template>
 

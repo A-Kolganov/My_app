@@ -50,8 +50,13 @@ import optMenu from './../components/Options-menu';
     @media(min-width: 768px){
         .header__title{
 font-size: 80px;
+line-height: 120px;
+        }
+    }
+    @media(min-width: 1200px){
+        .header__title{
+font-size: 80px;
 line-height: 200px;
         }
-        
     }
 </style>

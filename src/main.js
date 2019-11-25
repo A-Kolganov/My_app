@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 // import appHello from './view/HelloWorld.vue'
 import navigation from '@/components/Navigation'
-// import footer from './view/Footer.vue'
+import footer from './view/Footer.vue'
 import headerApp from './view/header.vue'
 import options from './components/Options.vue'
 import optionsMenu from './components/Options-menu.vue'
@@ -17,10 +17,11 @@ Vue.component('app-header', headerApp)
 Vue.component('app-options', options)
 Vue.component('app-options-menu', optionsMenu)
 Vue.component('app-main', main)
-// Vue.component('app-foot', footer)
+
 // Vue.component('app-hello', appHello)
-// // Vue.component('app-home', home)
+// // Vue.component('app-home', home)s
 Vue.component('app-nav', navigation)
+Vue.component('app-foot', footer)
 // Vue.component('app-about', About)
 /* eslint-disable no-new */
 // Your web app's Firebase configuration
