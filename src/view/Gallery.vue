@@ -38,16 +38,40 @@ export default {
       arrImg: [],
       galleryWork: [
         {
-          img: './static/img/foto.jpg',
-          link: 'https://a-kolganov.github.io/lesnaya_opushka/build/index.html',
-          point: 'сайт для растений',
-          tech: ['HTML', 'SASS', 'JS']
+          img: './static/screenshots/Document - Google Chrome.jpg',
+          link: 'https://a-kolganov.github.io/goit-fe-course/js/module_11/',
+          point: 'Поисковик JS по выбору критерий из меню',
+          tech: ['HTML', 'CSS', 'JS']
         },
         {
-          img: './static/img/foto.jpg',
-          link: 'https://www.pixlr.com/',
-          point: 'курсовой проект',
-          tech: ['HTML', 'SASS', 'JS', 'Vue.js']
+          img: './static/screenshots/Document3 - Google Chrome.jpg',
+          link: 'https://a-kolganov.github.io/goit-fe-course/js/module_10/',
+          point: 'API запросы на "получение", "добавление", "изменение", "удаление"',
+          tech: ['HTML', 'CSS', 'JS']
+        },
+        {
+          img: './static/screenshots/Labi.dev-test - Google Chrome.jpg',
+          link: 'https://a-kolganov.github.io/labi.dev-test/build/',
+          point: 'Верстка с получением информации',
+          tech: ['HTML', 'SASS', 'JS', 'Webpack','handlebars', 'JSON']
+        },
+        {
+          img: './static/screenshots/Module 12 - Google Chrome.jpg',
+          link: 'https://a-kolganov.github.io/goit-fe-course/js/module_12/build/',
+          point: 'Работа с API запросом и локальным хранением данных',
+          tech: ['HTML', 'CSS', 'JS', 'Local storage']
+        },
+        {
+          img: './static/screenshots/Lesnaya opushka - Google Chrome.jpg',
+          link: 'https://a-kolganov.github.io/lesnaya_opushka/build/index.html',
+          point: 'Верстка сайта SPA под разные девайсы ',
+          tech: ['HTML', 'SASS', 'JS', 'Webpack','handlebars', 'JSON']
+        },
+        {
+          img: './static/screenshots/FS Клиент.jpg',
+          link: 'https://chaty-ff67c.firebaseapp.com/',
+          point: 'Курсовая работа. Чат для общения ',
+          tech: ['HTML', 'firebase','lodash','vue','vue-material','vue-router','vuelidate','vue-cli']
         }
       ]
     }

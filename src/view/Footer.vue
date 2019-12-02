@@ -1,8 +1,8 @@
 <template>
   <footer class="footer" :style="{'background-color': themeColor}">
-    <p >+3(063)2441032 / tema.crow@gmail.com</p>
-    <p ><b>2019</b></p>
-    <p >Designed by A.Kolganov</p>
+    <p >{{phone_mail}}</p>
+    <p ><b>{{data}}</b></p>
+    <p >{{author}}</p>
     
   </footer>
 </template>
@@ -12,8 +12,9 @@ export default {
   props: ['lang','themeColor'],
   data () {
     return {
-      lang: 'ru',
-      themeColor: '#cc00cc'
+      phone_mail: '+3(063)2441032 / tema.crow@gmail.com',
+      data: '2019',
+      author: 'Designed by A.Kolganov'
     }
   },
   methods: {
@@ -30,7 +31,6 @@ export default {
 <style scoped>
 .footer{
   width:100%;
-  margin-top: 100px;
   height: 80px;
   background-color: #000;
   display: flex;

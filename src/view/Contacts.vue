@@ -48,6 +48,10 @@
           <p>+380632441032</p>
         </li>
       </ul>
+      <div class=" map-wrapper">
+        	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20334.57867266711!2d30.35684761415068!3d50.42578174178385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cb905c71b475%3A0x5594a8c68e2d4d9d!2z0JHQvtGA0YnQsNCz0L7QstC60LAsINCa0LjQtdCyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1575292982400!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    
+      </div>
   </div>
 
 </template>
@@ -101,7 +105,7 @@ export default {
   font-family: 'Rubik';
   font-size: 18px;
   text-align: center;
-  padding: 10;
+  padding: 10px;
 }
 .url-list_item__link{
   cursor: pointer;
@@ -110,5 +114,27 @@ export default {
   transform: scale(1.2);
   background-color: #fff;
   border-radius:10px;
+}
+.map{
+  min-width: 200px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+    border-radius: 10px;
+    border: #fff 5px solid;
+    box-sizing: border-box;
+}
+.map-wrapper{
+  display: block;
+  margin: 50px auto;
+    min-width: 200px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 500px;
+
 }
 </style>

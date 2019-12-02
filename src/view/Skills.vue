@@ -64,9 +64,11 @@ strong {
 .content__text{
   font-size: 10px;
   text-indent: unset;
+   border: 1px #000 dotted;
+   border-radius: 10px;
+   margin-left: 5px;
 }
 .content__block{
-  width: 100%;
   height: auto;
   margin: 20px auto;
   display: flex;
@@ -90,12 +92,14 @@ strong {
   font-family: 'Rubik' , serif;
   font-size: 15px;
   text-align:center;
+  margin-left: 5px;
 }
 .content__list__item{
   width: 50px;
   display: block;
   padding: 10px;
   box-sizing: border-box;
+ 
 }
 .content__list__item__icon{
   width:100%;

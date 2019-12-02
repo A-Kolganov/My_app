@@ -29,6 +29,7 @@ export default {
     position: relative;
     border-radius: 50px;
     width:100%;
+    max-width: 1200px;
     margin:200px auto 0;
     height: auto;
     background-color:#fff;

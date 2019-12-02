@@ -23,9 +23,10 @@
       </app-header>
       <app-main v-bind:themeColor="themeColor" v-bind:lang="lang">
       </app-main>
-      <app-foot v-bind:themeColor="themeColor" v-bind:lang="lang">
-      </app-foot>
+      
     </div>
+    <app-foot v-bind:themeColor="themeColor" v-bind:lang="lang">
+    </app-foot>
   </div>
  </template>
 
@@ -55,14 +56,17 @@ export default {
 
 <style scoped>
 @import './assets/fonts/index.css';
+.wrapper{
+  margin: 0 auto;
+  border: 1px #000 dotted;
+}
 .content-wrapper{
   background-attachment: fixed ;
   height:auto;
   min-height: 100vh;
   width:100%;
-
-}
-
+  padding: 0 0 50px 0;
+  }
 /**.wrapper{
   min-width: 1000px;
 }
