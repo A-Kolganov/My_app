@@ -3,17 +3,17 @@
     <div>
       <h2 class="content__title">{{lang === 'ru' ? title.ru : title.eng}}</h2>
       <ul class="content__list">
-        <li class="content__list__item" v-for="item in tech">
+        <li class="content__list__item" :v-for="item in tech">
           <img class="content__list__item__icon"  :src="item">
         </li>
       </ul>
     </div>
     <div class="content__block" :style="{'border':'5px'+' '+ themeColor + ' '+ 'solid'}">
-      <a class="btn-download" download href="./static/docs/Резюме.docx">Скачать файл</a>
+      <a class="btn-download" download href="./static/docs/Резюме.docx">{{lang === 'ru' ? `Скачать` : `Download`}}</a>
       <ul class="content__text">
-        <li>Размер: <strong>{{file.size}}</strong></li>
-        <li>Тип: <strong>{{file.type}}</strong></li>
-        <li>Обновлено: <strong>{{file.reload}}</strong></li>
+        <li>{{lang === 'ru' ? `Размер` : `Size`}}: <strong>{{file.size}}</strong></li>
+        <li>{{lang === 'ru' ? `Тип` : `Type`}}: <strong>{{file.type}}</strong></li>
+        <li>{{lang === 'ru' ? `Обновлено` : `Reloaded`}}: <strong>{{file.reload}}</strong></li>
       </ul>
     </div>
   </div>
@@ -67,6 +67,8 @@ strong {
    border: 1px #000 dotted;
    border-radius: 10px;
    margin-left: 5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
 .content__block{
   height: auto;
@@ -99,7 +101,7 @@ strong {
   display: block;
   padding: 10px;
   box-sizing: border-box;
- 
+
 }
 .content__list__item__icon{
   width:100%;

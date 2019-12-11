@@ -3,13 +3,13 @@
     <p >{{phone_mail}}</p>
     <p ><b>{{data}}</b></p>
     <p >{{author}}</p>
-    
+
   </footer>
 </template>
 
 <script>
 export default {
-  props: ['lang','themeColor'],
+  props: ['lang', 'themeColor'],
   data () {
     return {
       phone_mail: '+3(063)2441032 / tema.crow@gmail.com',
@@ -24,7 +24,7 @@ export default {
     chooseTheme: function (v) {
       this.themeColor = v
     }
-  },
+  }
 }
 </script>
 

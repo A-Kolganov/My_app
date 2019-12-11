@@ -7,7 +7,6 @@
              <div class="input-cover">
              <input class="section__inpLabel__input-color" v-on:keypress.enter.prevent v-model="themeColor" type="text" id="colorTheme" name="themeColor">
              <div class="input-example" :style="{'background-color': themeColor }">
-               
              </div>
          </div>
          </section>
@@ -20,6 +19,10 @@
          </section>
          <section class="section section--audio">
              <h2 class="section__title">{{lang === 'ru' ? titleMusic.ru : titleMusic.eng}}</h2>
+             <audio class="player"  controls loop>
+               <source src="./../../static/audio/Marauder.mp3" type="audio/mpeg">
+                {{lang === 'ru' ? `Ваш браузер не поддерживает мп3!`: `Your browser does not support mp3!`}}
+             </audio>
          </section>
      </form>
 
@@ -135,5 +138,8 @@ export default {
   height: 20px;
   border-radius: 50%;
   border: 1px solid #000;
+}
+.player{
+  width:100%;
 }
 </style>

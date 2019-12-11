@@ -6,27 +6,27 @@
     </header>
 </template>
 <script>
-import optMenu from './../components/Options-menu';
-    export default {
-        data () {
-            return {
-                lang: 'ru',
-                themeColor: '#cc00cc',
+import optMenu from './../components/Options-menu'
+export default {
+  data () {
+    return {
+      lang: 'ru',
+      themeColor: '#cc00cc'
     }
   },
-    methods: {
-        changeLang: function(data){
-            this.lang = data;
-            this.$emit('lang', this.lang);
-        },
-        chooseTheme: function(v){
-            this.themeColor = v;
-            this.$emit('theme', this.themeColor);
-        }
+  methods: {
+    changeLang: function (data) {
+      this.lang = data
+      this.$emit('lang', this.lang)
     },
-    components: {
-        optMenu
-        }
+    chooseTheme: function (v) {
+      this.themeColor = v
+      this.$emit('theme', this.themeColor)
+    }
+  },
+  components: {
+    optMenu
+  }
 }
 </script>
 <style scope>

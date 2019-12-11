@@ -2,12 +2,12 @@
   <div class="content">
     <h2 class="content__title">{{lang === 'ru' ? title.ru : title.eng}}</h2>
       <div class="content__wrapper">
-        <img class="content__img grid-item-one" :src="articles[0].url" :alt="articles[0].alt" >
-        <img class="content__img grid-item-two" :src="articles[1].url" :alt="articles[1].alt" >
-        <img class="content__img grid-item-three" :src="articles[2].url" :alt="articles[2].alt" >
-        <p class="content__text grid-item-four">{{articles[0].message}}</p>
-        <p class="content__text grid-item-five">{{articles[1].message}}</p>
-        <p class="content__text grid-item-six">{{articles[2].message}}</p>
+        <img class="content__img grid-item-one" :src="img[0].url" :alt="img[0].alt" >
+        <img class="content__img grid-item-two" :src="img[1].url" :alt="img[1].alt" >
+        <img class="content__img grid-item-three" :src="img[2].url" :alt="img[2].alt" >
+        <p class="content__text grid-item-four">{{lang === 'ru' ? articlesRu[0] : articlesEn[0]}}</p>
+        <p class="content__text grid-item-five">{{lang === 'ru' ? articlesRu[1] : articlesEn[1]}}</p>
+        <p class="content__text grid-item-six">{{lang === 'ru' ? articlesRu[2] : articlesEn[2]}}</p>
       </div>
   </div>
 </template>
@@ -23,15 +23,26 @@ export default {
         ru: 'Приятно познакомиться!',
         eng: 'Nice to meet you !'
       },
-      articles: [{
-        url: './static/img/html.png', alt: 'html & css & js image', 
-        message: 'Рад приветствовать Вас на моём личном сайте! Здесь Вы сможете найти немного информации обо мне и о том что я делаю - мои идеи и мои работы.'},
+      img: [{
+        url: './static/img/html.png',
+        alt: 'html & css & js image'},
       {
-        url: './static/img/code-javascript.jpg', alt: 'js image', 
-        message: `Для удобства вверху сайта предоставленно небольшое меню. Нажимайте на кнопку и в отдельном окне Вы можете настроить цвет темы для своего комфорта, выбрать язык и включить музыку для более комфорта прибывания на сайте. Ниже есть навигация по сайту, выбирайте интересующую Вас вкладку для более конкретной информации. Так же, Вы можете отпрвить свой комментарий на вкладке " Контакты" . Буду рад прочесть Ваше мнение, идеи или получить критику. `},
+        url: './static/img/code-javascript.jpg',
+        alt: 'js image' },
       {
-        url: './static/img/15.79.jpg', alt: 'working guy', 
-        message: `Не теряй времени - переходи по ссылкам  `}
+        url: './static/img/15.79.jpg',
+        alt: 'working guy'}
+      ],
+      articlesRu: [
+        `Здравствуйте! Меня зовут Артём и я JUNIOR FRONTEND DEVELOPER. Этот сайт полностью разработан моими силами на фреймворке Vue.js, который я только принялся узучать. Надеюсь Вы довольны тем что Вы видите и дадите обратный отзыв. `,
+        `У меня есть опыт работы в рекламе, продажах, маркетинге и полиграфии. Лишь недавно я открыл для себя програмирование и разработку, и полностью заинтересовался деятельностью в сфере ИТ. Это открытие дало мне понять чем я хочу заниматься в дальнейшем и где я хочу добиться успеха. Я успешно окончил курсы фронтенд разработчика и уже владею некоторыми знаниями и необходимым опытом. Курсовой работой стал хакатон, где я в команде с другими студентами разработали чат для общения ( ссылку на чат можно найти в списке проэктов). На данный момент я уделяю много внимания HTML/CSS верстке т.к. считаю что мне нужно преуспеть в этих вещах прежде чем двигаться дальше.  `,
+        `В мои планы входит стать полноценным FRONTEND разработчиком, качественно использовать возможности разных языков програмирования, раскрыть свой потенциал в одной и ведущих компаний.`
+      ],
+      articlesEn: [
+        `Hello! My name is Artem and I am JUNIOR FRONTEND DEVELOPER. This site is completely developed by my forces on the Vue.js framework, which I just started to learn. I hope you are happy with what you see and give me feedback.`,
+        `I have experience in advertising, sales, marketing and printing. Only recently I discovered programming and development for myself, and was completely interested in IT activities. This discovery made me understand what I want to do in the future and where I want to succeed. I successfully completed the front-end developer courses and already have some knowledge and necessary experience. The hackathon became a term paper, where I, in a team with other students, developed a chat for communication (a link to the chat can be found in the list of projects). At the moment, I pay a lot of attention to HTML / CSS layout because I believe that I need to succeed in these things before moving on.`,
+        `
+My plans include becoming a full-fledged FRONTEND developer, making good use of the capabilities of different programming languages, and unlocking my potential in one of the leading companies.`
       ]
     }
   },

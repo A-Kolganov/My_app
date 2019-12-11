@@ -1,18 +1,19 @@
 <template>
   <div>
       <h2 class="content__title">{{lang === 'ru' ? title.ru : title.eng}}</h2>
-      <p class="content__text">ниже приведена таблица моих работ или проектов, где я принимал участие</p>
+      <p class="content__text">{{lang === 'ru' ? `*Ниже приведена таблица моих работ или проектов, где я принимал участие` : `
+* Below is a table of my works or projects where I participated`}}</p>
       <table class="content__text">
         <tr>
-          <th :style="{'background-color': themeColor}">Вид</th>
-          <th :style="{'background-color': themeColor}">Ссылка</th>
-          <th :style="{'background-color': themeColor}">Цель</th>
-          <th :style="{'background-color': themeColor}">Основа</th>
+          <th :style="{'background-color': themeColor}">{{lang === 'ru' ? `Вид` : `IMG`}}</th>
+          <th :style="{'background-color': themeColor}">{{lang === 'ru' ? `Ссылка` : `URL`}}</th>
+          <th :style="{'background-color': themeColor}">{{lang === 'ru' ? `Цель` : `Point`}}</th>
+          <th :style="{'background-color': themeColor}">{{lang === 'ru' ? `Технологии` : `Technology`}}</th>
         </tr>
         <tr v-bind:key="index" v-for=" (item, index) of galleryWork">
           <td><img :src="item.img" alt="image"></td>
           <td><a :href="item.link" target="_blank">{{item.link}}</a></td>
-          <td>{{item.point}}</td>
+          <td>{{lang === 'ru' ? item.pointRu : item.pointEng }}</td>
           <td>
             <ul>
                <li v-bind:key="ind" v-for=" (i, ind) of item.tech">{{i}}</li>
@@ -40,44 +41,50 @@ export default {
         {
           img: './static/screenshots/Document - Google Chrome.jpg',
           link: 'https://a-kolganov.github.io/goit-fe-course/js/module_11/',
-          point: 'Поисковик JS по выбору критерий из меню',
+          pointRu: 'Поисковик JS по выбору критерий из меню',
+          pointEng: 'JS search engine for selecting criteria from the menu',
           tech: ['HTML', 'CSS', 'JS']
         },
         {
           img: './static/screenshots/Document3 - Google Chrome.jpg',
           link: 'https://a-kolganov.github.io/goit-fe-course/js/module_10/',
-          point: 'API запросы на "получение", "добавление", "изменение", "удаление"',
+          pointRu: 'API запросы на "получение", "добавление", "изменение", "удаление"',
+          pointEng: 'API requests for "receive", "add", "change", "delete"',
           tech: ['HTML', 'CSS', 'JS']
         },
         {
           img: './static/screenshots/Labi.dev-test - Google Chrome.jpg',
           link: 'https://a-kolganov.github.io/labi.dev-test/build/',
-          point: 'Верстка с получением информации',
-          tech: ['HTML', 'SASS', 'JS', 'Webpack','handlebars', 'JSON']
+          pointRu: 'Верстка с получением информации',
+          pointEng: 'Layout with data information',
+          tech: ['HTML', 'SASS', 'JS', 'Webpack', 'handlebars', 'JSON']
         },
         {
           img: './static/screenshots/Module 12 - Google Chrome.jpg',
           link: 'https://a-kolganov.github.io/goit-fe-course/js/module_12/build/',
-          point: 'Работа с API запросом и локальным хранением данных',
+          pointRu: 'Работа с API запросом и локальным хранением данных',
+          pointEng: 'Work with API request and local data storage',
           tech: ['HTML', 'CSS', 'JS', 'Local storage']
         },
         {
           img: './static/screenshots/Lesnaya opushka - Google Chrome.jpg',
           link: 'https://a-kolganov.github.io/lesnaya_opushka/build/index.html',
-          point: 'Верстка сайта SPA под разные девайсы ',
-          tech: ['HTML', 'SASS', 'JS', 'Webpack','handlebars', 'JSON']
+          pointRu: 'Верстка сайта SPA под разные девайсы ',
+          pointEng: 'Layout of the SPA site for different devices',
+          tech: ['HTML', 'SASS', 'JS', 'Webpack', 'handlebars', 'JSON']
         },
         {
           img: './static/screenshots/FS Клиент.jpg',
           link: 'https://chaty-ff67c.firebaseapp.com/',
-          point: 'Курсовая работа. Чат для общения ',
-          tech: ['HTML', 'firebase','lodash','vue','vue-material','vue-router','vuelidate','vue-cli']
+          pointRu: 'Курсовая работа. Чат для общения ',
+          pointEng: 'Course work. Chat for communication',
+          tech: ['HTML', 'firebase', 'lodash', 'vue', 'vue-material', 'vue-router', 'vuelidate', 'vue-cli']
         }
       ]
     }
   },
   methods: {
-    },
+  },
   mixins: [textMix]
 }
 </script>
