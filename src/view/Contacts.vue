@@ -61,7 +61,9 @@
             <!--  <input v-model="" type="" id="" name="" value="" > -->
         </div>
         <div  class="comment-box__output-box">
-          
+          <ul class="comment-box__output-box__list">
+            
+          </ul>
         </div>
       </div>
 
@@ -92,9 +94,12 @@ export default {
       inpName: 'Name*',
       inpEmail: 'Email*',
       inpCom: 'Comment*',
-      commentArr : [ ],
+      
 
     }
+  },
+  beforeCreate() {
+    getValue();
   },
   methods: {
     setValue: function () {
@@ -104,17 +109,25 @@ export default {
         eMail: this.inpEmail, 
         comment: this.inpCom
       })} ,
-    addArr : function(obj){
-      this.commentArr(obj);
-      console.log(commentArr);
-    },
+
         getValue: function () {
+          const list= document.querySelector(".comment-box__output-box__list");
       js.db.collection("feedback").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc)  {
-        // doc.data() is never undefined for query doc snapshots
-        
+       
+        list.insertAdjacentHTML("afterBegin", "<li v-bind:class='comment-box__output-box__list__item' ><p v-bind:class='comment-box__output-box__list__item__name'>"+'Name: '+ doc.data().name +"</p><p class='comment-box__output-box__list__item__comment'>"+'Comment: '+doc.data().comment+"</p> </li>")
         console.log( doc.data());
-        this.addArr(doc.data())
+    // const li = document.createElement('li')
+        // li.classList.add("comment-box__output-box__list__item")
+        // const pName = document.createElement('p')
+        // pName.classList.add("comment-box__output-box__list__item__name")
+        // const pComment = document.createElement('p')
+        // pComment.classList.add("comment-box__output-box__list__item__comment")
+        // pName.textContent = doc.data().name
+        // pComment.textContent = doc.data().comment
+        // li.appendChild(pComment)
+        // li.appendChild(pName)
+        // list.appendChild(li)
        
     });
 });
@@ -122,10 +135,6 @@ export default {
       },
 
   },
-  watch:{ 
-    commentArr : function (){
-console.log( 'arr:' + this.commentArr)
-  }},
   mixins: [textMix]
 }
 </script>
@@ -222,4 +231,15 @@ console.log( 'arr:' + this.commentArr)
    font-weight: bolder;
    font-size:20px;
 }
+.comment-box__output-box__list,.comment-box__output-box__list__item__name{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #888;
+  font-size: 15px;
+  border-radius: 10px;
+  display:block;
+  box-sizing:border-box;
+}
+
 </style>
