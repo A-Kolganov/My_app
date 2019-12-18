@@ -56,13 +56,10 @@
              <input class="comment-box__input-box__input comment-box__input-box__input--e-mail"   v-model="inpEmail">
              <textarea class="comment-box__input-box__input comment-box__input-box__input--comment"   v-model="inpCom">Comment</textarea>
              <button class="comment-box__input-box__submit-btn" type="submit" :style="{'color': themeColor }" v-on:click="setValue">Submit</button>
-                 <button class="comment-box__input-box__submit-btn" type="submit" :style="{'color': themeColor }" v-on:click="getValue">Get</button>
-            <!--  <input v-model="" type="" id="" name="" value=""> -->
-            <!--  <input v-model="" type="" id="" name="" value="" > -->
+            <button class="comment-box__input-box__submit-btn" v-show="enableBtn" @click="enableBtn = !enableBtn" type="submit" :style="{'color': themeColor }" v-on:click="getValue">Show all comments</button>
         </div>
         <div  class="comment-box__output-box">
           <ul class="comment-box__output-box__list">
-            
           </ul>
         </div>
       </div>
@@ -94,12 +91,8 @@ export default {
       inpName: 'Name*',
       inpEmail: 'Email*',
       inpCom: 'Comment*',
-      
-
+      enableBtn: true,
     }
-  },
-  beforeCreate() {
-    getValue();
   },
   methods: {
     setValue: function () {
@@ -111,24 +104,14 @@ export default {
       })} ,
 
         getValue: function () {
+          const _this = this;
           const list= document.querySelector(".comment-box__output-box__list");
       js.db.collection("feedback").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc)  {
        
-        list.insertAdjacentHTML("afterBegin", "<li v-bind:class='comment-box__output-box__list__item' ><p v-bind:class='comment-box__output-box__list__item__name'>"+'Name: '+ doc.data().name +"</p><p class='comment-box__output-box__list__item__comment'>"+'Comment: '+doc.data().comment+"</p> </li>")
-        console.log( doc.data());
-    // const li = document.createElement('li')
-        // li.classList.add("comment-box__output-box__list__item")
-        // const pName = document.createElement('p')
-        // pName.classList.add("comment-box__output-box__list__item__name")
-        // const pComment = document.createElement('p')
-        // pComment.classList.add("comment-box__output-box__list__item__comment")
-        // pName.textContent = doc.data().name
-        // pComment.textContent = doc.data().comment
-        // li.appendChild(pComment)
-        // li.appendChild(pName)
-        // list.appendChild(li)
-       
+        list.insertAdjacentHTML("afterBegin", "<li class='comment-box__output-box__list__item' ><p class='comment-box__output-box__list__item__name'>"+ doc.data().name +"</p><p class='comment-box__output-box__list__item__comment'>"+doc.data().comment+"</p> </li>")
+        
+
     });
 });
  
@@ -231,7 +214,7 @@ export default {
    font-weight: bolder;
    font-size:20px;
 }
-.comment-box__output-box__list,.comment-box__output-box__list__item__name{
+.comment-box__output-box__list{
   width: 100%;
   height: auto;
   padding: 10px;

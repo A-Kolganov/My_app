@@ -1,0 +1,29 @@
+.comment-box__output-box__list__item__comment,.comment-box__output-box__list__item__name{
+  background-color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  text-align: left;
+  font-family: "Alice";
+  font-style: normal;
+  margin: 5px;
+  padding: 5px;
+  box-sizing:border-box;
+  }
+  .comment-box__output-box__list__item__comment{
+    width: 100%;
+    min-height: 40px;
+
+  }
+  .comment-box__output-box__list__item__name{
+    width: 150px;
+  }
+  .comment-box__output-box__list__item{
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
+@media(min-width: 768px){
+  .comment-box__output-box__list__item__comment,.comment-box__output-box__list__item__name{
+    font-size: 25px;
+  }
+}
